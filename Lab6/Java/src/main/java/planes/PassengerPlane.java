@@ -2,7 +2,7 @@ package planes;
 
 import java.util.Objects;
 
-public class PassengerPlane extends Plane{
+public class PassengerPlane extends Plane {
 
     private int passengersCapacity;
 
@@ -24,12 +24,12 @@ public class PassengerPlane extends Plane{
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof PassengerPlane)) return false;
-        if (!super.equals(o)) return false;
-        PassengerPlane plane = (PassengerPlane) o;
-        return passengersCapacity == plane.passengersCapacity;
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (!(object instanceof PassengerPlane)) return false;
+        if (!super.equals(object)) return false;
+        PassengerPlane passengerPlaneOfObjectToEqual = (PassengerPlane) object;
+        return passengersCapacity == passengerPlaneOfObjectToEqual.passengersCapacity;
     }
 
     @Override

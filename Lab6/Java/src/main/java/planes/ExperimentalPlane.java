@@ -1,26 +1,26 @@
 package planes;
 
 import models.ClassificationLevel;
-import models.ExperimentalTypes;
+import models.ExperimentalPlaneTypes;
 
-public class ExperimentalPlane extends Plane{
+public class ExperimentalPlane extends Plane {
 
-    private ExperimentalTypes experimentalTypes;
+    private ExperimentalPlaneTypes experimentalPlaneTypes;
     private ClassificationLevel classificationLevel;
 
     public ExperimentalPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity,
-                             ExperimentalTypes experimentalTypes, ClassificationLevel classificationLevel) {
+                             ExperimentalPlaneTypes experimentalPlaneTypes, ClassificationLevel classificationLevel) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
-        this.experimentalTypes = experimentalTypes;
+        this.experimentalPlaneTypes = experimentalPlaneTypes;
         this.classificationLevel = classificationLevel;
     }
 
-    public ExperimentalTypes getExperimentalTypes() {
-        return experimentalTypes;
+    public ExperimentalPlaneTypes getExperimentalPlaneTypes() {
+        return experimentalPlaneTypes;
     }
 
-    public void setExperimentalTypes(ExperimentalTypes experimentalTypes) {
-        this.experimentalTypes = experimentalTypes;
+    public void setExperimentalPlaneTypes(ExperimentalPlaneTypes experimentalPlaneTypes) {
+        this.experimentalPlaneTypes = experimentalPlaneTypes;
     }
 
     public ClassificationLevel getClassificationLevel(){
