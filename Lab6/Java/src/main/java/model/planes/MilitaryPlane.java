@@ -1,6 +1,7 @@
-package planes;
+package model.planes;
 
-import models.MilitaryPlaneType;
+import model.Plane;
+import model.entities.MilitaryPlaneType;
 
 import java.util.Objects;
 
@@ -12,7 +13,14 @@ public class MilitaryPlane extends Plane {
                          int maxLoadCapacity, MilitaryPlaneType militaryPlaneType) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
         this.militaryPlaneType = militaryPlaneType;
+    }
 
+    public MilitaryPlaneType getType() {
+        return militaryPlaneType;
+    }
+
+    public void setMilitaryPlaneType(MilitaryPlaneType militaryPlaneType) {
+        this.militaryPlaneType = militaryPlaneType;
     }
 
     public MilitaryPlaneType getMilitaryPlaneType() {
@@ -39,4 +47,5 @@ public class MilitaryPlane extends Plane {
     public int hashCode() {
         return Objects.hash(super.hashCode(), militaryPlaneType);
     }
+    
 }

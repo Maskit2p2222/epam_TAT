@@ -1,4 +1,6 @@
-package planes;
+package model.planes;
+
+import model.Plane;
 
 import java.util.Objects;
 
