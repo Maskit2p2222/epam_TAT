@@ -32,6 +32,8 @@ public class ExperimentalPlane extends Plane {
         this.classificationLevel = classificationLevel;
     }
 
+
+
     @Override
     public boolean equals(Object object) {
         return super.equals(object);
@@ -44,8 +46,9 @@ public class ExperimentalPlane extends Plane {
 
     @Override
     public String toString() {
-        return "experimentalPlane{" +
-                "model='" + model + '\'' +
-                '}';
+        final StringBuilder stringBuilder = new StringBuilder("ExperimentalPlane{");
+        stringBuilder.append("model='").append(model).append('\'');
+        stringBuilder.append('}');
+        return stringBuilder.toString();
     }
 }

@@ -40,15 +40,19 @@ public class Airport {
     }
 
     public List<MilitaryPlane> getTransportMilitaryPlanes() {
-        return this.getMilitaryPlanes().stream()
-                .filter(militaryPlane -> militaryPlane.getType()
+        return this.getMilitaryPlanes()
+                .stream()
+                .filter(militaryPlane -> militaryPlane
+                        .getType()
                         .equals(MilitaryPlaneType.TRANSPORT))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public List<MilitaryPlane> getBomberMilitaryPlanes() {
-        return getMilitaryPlanes().stream()
-                .filter(militaryPlane -> militaryPlane.getType()
+        return getMilitaryPlanes()
+                .stream()
+                .filter(militaryPlane -> militaryPlane
+                        .getType()
                         .equals(MilitaryPlaneType.BOMBER))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
@@ -79,8 +83,9 @@ public class Airport {
 
     @Override
     public String toString() {
-        return "model.Airport{" +
-                "Planes=" + planes.toString() +
-                '}';
+        final StringBuilder stringBuilder = new StringBuilder("Airport{");
+        stringBuilder.append("planes=").append(planes);
+        stringBuilder.append('}');
+        return stringBuilder.toString();
     }
 }

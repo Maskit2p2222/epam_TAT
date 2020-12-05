@@ -31,15 +31,6 @@ abstract public class Plane {
         return this.maxLoadCapacity;
     }
 
-    @Override
-    public String toString() {
-        return "Plane{" +
-                "model='" + model + '\'' +
-                ", maxSpeed=" + maxSpeed +
-                ", maxFlightDistance=" + maxFlightDistance +
-                ", maxLoadCapacity=" + maxLoadCapacity +
-                '}';
-    }
 
     @Override
     public boolean equals(Object object) {
@@ -56,4 +47,17 @@ abstract public class Plane {
     public int hashCode() {
         return Objects.hash(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder stringBuilder = new StringBuilder("Plane{");
+        stringBuilder.append("model='").append(model).append('\'');
+        stringBuilder.append(", maxSpeed=").append(maxSpeed);
+        stringBuilder.append(", maxFlightDistance=").append(maxFlightDistance);
+        stringBuilder.append(", maxLoadCapacity=").append(maxLoadCapacity);
+        stringBuilder.append('}');
+        return stringBuilder.toString();
+    }
+
+
 }
