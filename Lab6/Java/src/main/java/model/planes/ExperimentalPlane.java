@@ -20,10 +20,6 @@ public class ExperimentalPlane extends Plane {
         return experimentalPlaneType;
     }
 
-    public ExperimentalPlaneType getExperimentalPlaneType() {
-        return experimentalPlaneType;
-    }
-
     public void setExperimentalPlaneType(ExperimentalPlaneType experimentalPlaneType) {
         this.experimentalPlaneType = experimentalPlaneType;
     }

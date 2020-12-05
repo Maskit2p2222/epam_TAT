@@ -1,5 +1,6 @@
 package model;
 
+import model.entities.ClassificationLevel;
 import model.entities.ExperimentalPlaneType;
 import model.planes.ExperimentalPlane;
 import model.entities.MilitaryPlaneType;
@@ -63,6 +64,15 @@ public class Airport {
                 .filter(experimentalPlane -> experimentalPlane
                             .getType()
                             .equals(experimentalPlaneType))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public List<ExperimentalPlane> getExperimentalPlanesOfSecretion(ClassificationLevel classificationLevel){
+        return this.getExperimentalPlanes()
+                .stream()
+                .filter(experimentalPlane -> experimentalPlane
+                        .getClassificationLevel()
+                        .equals(classificationLevel))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
