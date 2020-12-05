@@ -1,5 +1,6 @@
 package model;
 
+import model.entities.ExperimentalPlaneType;
 import model.planes.ExperimentalPlane;
 import model.entities.MilitaryPlaneType;
 import model.planes.MilitaryPlane;
@@ -39,21 +40,12 @@ public class Airport {
                 .get();
     }
 
-    public List<MilitaryPlane> getTransportMilitaryPlanes() {
+    public List<MilitaryPlane> getMilitaryPlanesOfType(MilitaryPlaneType militaryPlaneType){
         return this.getMilitaryPlanes()
                 .stream()
                 .filter(militaryPlane -> militaryPlane
                         .getType()
-                        .equals(MilitaryPlaneType.TRANSPORT))
-                .collect(Collectors.toCollection(ArrayList::new));
-    }
-
-    public List<MilitaryPlane> getBomberMilitaryPlanes() {
-        return getMilitaryPlanes()
-                .stream()
-                .filter(militaryPlane -> militaryPlane
-                        .getType()
-                        .equals(MilitaryPlaneType.BOMBER))
+                        .equals(militaryPlaneType))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
@@ -65,7 +57,16 @@ public class Airport {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public void sortByMaxDistance() {
+    public List<ExperimentalPlane> getExperimentalPlanesOfType(ExperimentalPlaneType experimentalPlaneType){
+        return this.getExperimentalPlanes()
+                .stream()
+                .filter(experimentalPlane -> experimentalPlane
+                            .getType()
+                            .equals(experimentalPlaneType))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public void sortByMaxFlightDistance() {
         planes.sort(Comparator.comparingInt(Plane::getMaxFlightDistance));
     }
 

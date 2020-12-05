@@ -2,26 +2,30 @@ package model.planes;
 
 import model.Plane;
 import model.entities.ClassificationLevel;
-import model.entities.ExperimentalPlaneTypes;
+import model.entities.ExperimentalPlaneType;
 
 public class ExperimentalPlane extends Plane {
 
-    private ExperimentalPlaneTypes experimentalPlaneTypes;
+    private ExperimentalPlaneType experimentalPlaneType;
     private ClassificationLevel classificationLevel;
 
     public ExperimentalPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity,
-                             ExperimentalPlaneTypes experimentalPlaneTypes, ClassificationLevel classificationLevel) {
+                             ExperimentalPlaneType experimentalPlaneType, ClassificationLevel classificationLevel) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
-        this.experimentalPlaneTypes = experimentalPlaneTypes;
+        this.experimentalPlaneType = experimentalPlaneType;
         this.classificationLevel = classificationLevel;
     }
 
-    public ExperimentalPlaneTypes getExperimentalPlaneTypes() {
-        return experimentalPlaneTypes;
+    public ExperimentalPlaneType getType() {
+        return experimentalPlaneType;
     }
 
-    public void setExperimentalPlaneTypes(ExperimentalPlaneTypes experimentalPlaneTypes) {
-        this.experimentalPlaneTypes = experimentalPlaneTypes;
+    public ExperimentalPlaneType getExperimentalPlaneType() {
+        return experimentalPlaneType;
+    }
+
+    public void setExperimentalPlaneType(ExperimentalPlaneType experimentalPlaneType) {
+        this.experimentalPlaneType = experimentalPlaneType;
     }
 
     public ClassificationLevel getClassificationLevel(){
@@ -51,4 +55,5 @@ public class ExperimentalPlane extends Plane {
         stringBuilder.append('}');
         return stringBuilder.toString();
     }
+
 }
