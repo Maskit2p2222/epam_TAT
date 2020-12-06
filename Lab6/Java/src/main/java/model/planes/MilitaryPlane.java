@@ -15,15 +15,11 @@ public class MilitaryPlane extends Plane {
         this.militaryPlaneType = militaryPlaneType;
     }
 
-    public MilitaryPlaneType getType() {
-        return militaryPlaneType;
-    }
-
     public void setMilitaryPlaneType(MilitaryPlaneType militaryPlaneType) {
         this.militaryPlaneType = militaryPlaneType;
     }
 
-    public MilitaryPlaneType getMilitaryPlaneType() {
+    public MilitaryPlaneType getType() {
         return militaryPlaneType;
     }
 
