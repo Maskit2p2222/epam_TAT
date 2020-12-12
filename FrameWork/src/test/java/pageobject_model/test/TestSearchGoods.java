@@ -12,8 +12,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageobject_model.page.MainSitePage;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class TestSearchGoods {
     private WebDriver webDriver;
