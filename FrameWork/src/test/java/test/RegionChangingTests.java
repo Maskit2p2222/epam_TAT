@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class RegionChangingTests extends CommonConditions{
 
     @Test
-    public void changRegionOnRussia(){
+    public void testChangRegionOnRussia(){
         String testRegion = RegionDataReader.getRussiaRegion();
         String expectedRegion = new MainPage(driver)
                 .openPage()
@@ -21,7 +21,7 @@ public class RegionChangingTests extends CommonConditions{
     }
 
     @Test
-    public void changRegionOnUkraine(){
+    public void testChangRegionOnUkraine(){
         String testRegion = RegionDataReader.getUkraineRegion();
         String expectedRegion = new MainPage(driver)
                 .openPage()

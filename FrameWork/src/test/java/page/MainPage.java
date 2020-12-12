@@ -13,11 +13,17 @@ public class MainPage extends AbstractPage
 {
 	private final String BASE_URL = "https://www.e-katalog.ru/";
 
+	@FindBy(id = "ek-search")
+	private WebElement searchLine;
+
+	@FindBy(id = "num_bm_visited")
+	private WebElement countOfVisitedProductPagesSpan;
+
+	@FindBy(xpath = "//button[@name='search_but_']")
+	private WebElement searchButton;
+
 	@FindBy(xpath = "//span[@class='wu_entr']")
 	private WebElement enterButton;
-
-	@FindBy(xpath = "//div[@class='signin-with signin-with-ek d-flex justify-content-center align-items-center' and @jtype='click']")
-	private WebElement enterWithEmailButton;
 
 	@FindBy(xpath = "//input[@class='ek-form-control' and @type='text']")
 	private WebElement emailInput;
@@ -27,18 +33,6 @@ public class MainPage extends AbstractPage
 
 	@FindBy(xpath = "//button[@class='ek-form-btn blue']")
 	private WebElement enterButtonInPopUp;
-
-	@FindBy(xpath = "//a[@class='info-nick']")
-	private WebElement userNameLabel;
-
-	@FindBy(xpath = "//div[@class='ek-form-text']")
-	private WebElement exceptionLoginLabel;
-
-	@FindBy(xpath = "//div[@class='ib h']")
-	private WebElement regionChangSpan;
-
-	@FindBy(xpath = "//div[@class='lf-text']")
-	private WebElement regionDropdownList;
 
 	@FindBy(xpath = "//a[@class='option']")
 	private WebElement regionDropdownListElement;
@@ -62,11 +56,20 @@ public class MainPage extends AbstractPage
 		PageFactory.initElements(this.driver, this);
 	}
 
+	public QueryResultsPage searchForQuery(String query){
+		searchLine.sendKeys(query);
+		searchButton.click();
+		return new QueryResultsPage(driver);
+	}
+
+	public String getCountOfVisitedProductPagesSpan(){
+		return this.countOfVisitedProductPagesSpan.getText();
+	}
+
 	public String getExceptionLoginLabel(){
-		new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+		return new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
 				.until(ExpectedConditions
-						.presenceOfElementLocated(byExceptionLoginLabel));
-		return exceptionLoginLabel.getText();
+						.presenceOfElementLocated(byExceptionLoginLabel)).getText();
 	}
 
 	public MainPage clickEnterButton(){
@@ -77,15 +80,13 @@ public class MainPage extends AbstractPage
 
 	public MainPage clickOnRegionChangSpan(){
 		new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS)
-				.until(ExpectedConditions.presenceOfElementLocated(byRegionChangSpan));
-		this.regionChangSpan.click();
+				.until(ExpectedConditions.presenceOfElementLocated(byRegionChangSpan)).click();
 		return this;
 	}
 
 	public MainPage changRegion(){
 		new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS)
-				.until(ExpectedConditions.presenceOfElementLocated(byRegionDropdownList));
-		this.regionDropdownList.click();
+				.until(ExpectedConditions.presenceOfElementLocated(byRegionDropdownList)).click();
 		this.regionDropdownListElement.click();
 		return this;
 	}
@@ -97,8 +98,7 @@ public class MainPage extends AbstractPage
 	public MainPage clickEnterWithEmailButton(){
 		new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
 				.until(ExpectedConditions
-						.presenceOfElementLocated(byEnterWithEmailButton));
-		this.enterWithEmailButton.click();
+						.presenceOfElementLocated(byEnterWithEmailButton)).click();
 		return this;
 	}
 
@@ -119,10 +119,9 @@ public class MainPage extends AbstractPage
 
 
 	public String getLoginName() {
-		new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+		return new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
 				.until(ExpectedConditions
-						.presenceOfElementLocated(byUserNameLabel));
-		return userNameLabel.getText();
+						.presenceOfElementLocated(byUserNameLabel)).getText();
 	}
 
 }
