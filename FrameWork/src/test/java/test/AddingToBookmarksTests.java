@@ -10,7 +10,8 @@ public class AddingToBookmarksTests extends CommonConditions  {
     @Test
     public void testAddXiaomiPhoneToBookmarks(){
         String xiaomiPhoneModel = ProductDataReader.getXiaomiPhoneModel();
-        ProductPage xiaomiPage = new ProductPage(driver);
+        String xiaomiPageUrl = ProductDataReader.getXiaomiPageUrl();
+        ProductPage xiaomiPage = new ProductPage(driver,xiaomiPageUrl);
         String xiaomiNameText = xiaomiPage
                 .openPage()
                 .getProductNameLabelInnerText();

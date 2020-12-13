@@ -1,6 +1,8 @@
 package page;
 
 import model.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage extends AbstractPage
 {
+	private final Logger logger = LogManager.getRootLogger();
 	private final String BASE_URL = "https://www.e-katalog.ru/";
 
 	@FindBy(id = "ek-search")
@@ -56,9 +59,19 @@ public class MainPage extends AbstractPage
 		PageFactory.initElements(this.driver, this);
 	}
 
+	@Override
+	public MainPage openPage()
+	{
+		driver.navigate().to(BASE_URL);
+		logger.info("Opened page " + BASE_URL);
+		return this;
+	}
+
 	public QueryResultsPage searchForQuery(String query){
 		searchLine.sendKeys(query);
+		logger.info("Send into " + searchLine.getTagName() +" key - " + query);
 		searchButton.click();
+		logger.info("Clicked on " + searchButton.getTagName());
 		return new QueryResultsPage(driver);
 	}
 
@@ -73,6 +86,7 @@ public class MainPage extends AbstractPage
 	}
 
 	public MainPage clickEnterButton(){
+		logger.info("Clicked on " + enterButton.getTagName());
 		this.enterButton.click();
 		return this;
 
@@ -87,7 +101,9 @@ public class MainPage extends AbstractPage
 	public MainPage changRegion(){
 		new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS)
 				.until(ExpectedConditions.presenceOfElementLocated(byRegionDropdownList)).click();
+		logger.info("Clicked on Region dropdown list");
 		this.regionDropdownListElement.click();
+		logger.info("Clicked on " + regionDropdownListElement.getTagName());
 		return this;
 	}
 
@@ -99,24 +115,19 @@ public class MainPage extends AbstractPage
 		new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
 				.until(ExpectedConditions
 						.presenceOfElementLocated(byEnterWithEmailButton)).click();
+		logger.info("Clicked on email button in login");
 		return this;
 	}
 
 	public MainPage enterLoginDataAndClickEnterButton(User user){
 		this.emailInput.sendKeys(user.getUsername());
+		logger.info("Send into " + emailInput.getTagName() +" key - " + user.getUsername());
 		this.passwordInput.sendKeys(user.getPassword());
+		logger.info("Send into " + passwordInput.getTagName() +" key - " + user.getPassword());
 		this.enterButtonInPopUp.click();
+		logger.info("Clicked on " + enterButtonInPopUp.getTagName());
 		return this;
 	}
-
-	@Override
-	public MainPage openPage()
-	{
-		driver.navigate().to(BASE_URL);
-		return this;
-	}
-
-
 
 	public String getLoginName() {
 		return new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
