@@ -1,7 +1,5 @@
 package page;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductPage extends AbstractPage {
-
-    private final Logger logger = LogManager.getRootLogger();
 
     private String productPageUrl;
 
@@ -66,7 +62,7 @@ public class ProductPage extends AbstractPage {
 
     public List<String> getItemsAddedToComparisonText(){
         try {
-            Thread.sleep(400);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -93,14 +89,15 @@ public class ProductPage extends AbstractPage {
     }
 
     public ComparisonPage goToCompressionButtonClick(){
+        logger.info("Will click on " + goToCompressionButton.getTagName());
         this.goToCompressionButton.click();
-        logger.info("Clicked on " + goToCompressionButton.getTagName());
+
         return new ComparisonPage(driver);
     }
 
     public ProductPage addToComparison(){
+        logger.info("Will click on " + addToComparisonComboBox.getTagName());
         this.addToComparisonComboBox.click();
-        logger.info("Clicked on " + addToComparisonComboBox.getTagName());
         return this;
     }
 

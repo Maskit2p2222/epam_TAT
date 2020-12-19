@@ -1,8 +1,6 @@
 package page;
 
 import model.User;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage extends AbstractPage
 {
-	private final Logger logger = LogManager.getRootLogger();
-	private final String BASE_URL = "https://www.e-katalog.ru/";
+
+	private static final String BASE_URL = "https://www.e-katalog.ru/";
 
 	@FindBy(id = "ek-search")
 	private WebElement searchLine;
@@ -43,15 +41,16 @@ public class MainPage extends AbstractPage
 	@FindBy(xpath = "//div[@class='ib h']/em")
 	private WebElement currentRegionEm;
 
-	private final By byRegionDropdownList = By.xpath("//div[@class='lf-text']");
+	private static final By byRegionDropdownList = By.xpath("//div[@class='lf-text']");
 
-	private final By byEnterWithEmailButton = By.xpath("//div[@class='signin-with signin-with-ek d-flex justify-content-center align-items-center' and @jtype='click']");
+	private static final By byEnterWithEmailButton =
+			By.xpath("//div[@class='signin-with signin-with-ek d-flex justify-content-center align-items-center' and @jtype='click']");
 
-	private final By byUserNameLabel = By.xpath("//a[@class='info-nick']");
+	private static final By byUserNameLabel = By.xpath("//a[@class='info-nick']");
 
-	private final By byExceptionLoginLabel = By.xpath("//div[@class='ek-form-text']");
+	private static final By byExceptionLoginLabel = By.xpath("//div[@class='ek-form-text']");
 
-	private final By byRegionChangSpan = By.xpath("//div[@class='ib h']");
+	private static final By byRegionChangSpan = By.xpath("//div[@class='ib h']");
 
 	public MainPage(WebDriver driver)
 	{
@@ -80,8 +79,7 @@ public class MainPage extends AbstractPage
 	}
 
 	public String getExceptionLoginLabel(){
-		return new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-				.until(ExpectedConditions
+		return driverWait.until(ExpectedConditions
 						.presenceOfElementLocated(byExceptionLoginLabel)).getText();
 	}
 
@@ -93,17 +91,17 @@ public class MainPage extends AbstractPage
 	}
 
 	public MainPage clickOnRegionChangSpan(){
-		new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS)
-				.until(ExpectedConditions.presenceOfElementLocated(byRegionChangSpan)).click();
+		driverWait.until(ExpectedConditions.presenceOfElementLocated(byRegionChangSpan))
+				.click();
 		return this;
 	}
 
 	public MainPage changRegion(){
-		new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS)
-				.until(ExpectedConditions.presenceOfElementLocated(byRegionDropdownList)).click();
 		logger.info("Clicked on Region dropdown list");
-		this.regionDropdownListElement.click();
+		driverWait.until(ExpectedConditions.presenceOfElementLocated(byRegionDropdownList))
+				.click();
 		logger.info("Clicked on " + regionDropdownListElement.getTagName());
+		this.regionDropdownListElement.click();
 		return this;
 	}
 
@@ -112,26 +110,24 @@ public class MainPage extends AbstractPage
 	}
 
 	public MainPage clickEnterWithEmailButton(){
-		new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-				.until(ExpectedConditions
-						.presenceOfElementLocated(byEnterWithEmailButton)).click();
 		logger.info("Clicked on email button in login");
+		driverWait.until(ExpectedConditions
+				.presenceOfElementLocated(byEnterWithEmailButton)).click();
 		return this;
 	}
 
 	public MainPage enterLoginDataAndClickEnterButton(User user){
-		this.emailInput.sendKeys(user.getUsername());
 		logger.info("Send into " + emailInput.getTagName() +" key - " + user.getUsername());
-		this.passwordInput.sendKeys(user.getPassword());
+		this.emailInput.sendKeys(user.getUsername());
 		logger.info("Send into " + passwordInput.getTagName() +" key - " + user.getPassword());
-		this.enterButtonInPopUp.click();
+		this.passwordInput.sendKeys(user.getPassword());
 		logger.info("Clicked on " + enterButtonInPopUp.getTagName());
+		this.enterButtonInPopUp.click();
 		return this;
 	}
 
 	public String getLoginName() {
-		return new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-				.until(ExpectedConditions
+		return driverWait.until(ExpectedConditions
 						.presenceOfElementLocated(byUserNameLabel)).getText();
 	}
 
