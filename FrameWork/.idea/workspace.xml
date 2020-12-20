@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac7b6fdc-dff1-46c1-99eb-44d197857fec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/page/PostNavBarPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test/NavigationBarTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/QueryResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/QueryResultsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/QueryResultsPageWithMaxPriceFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/QueryResultsPageWithMaxPriceFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/test/SearchGoodsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/SearchGoodsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +34,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/xUnit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -221,7 +215,9 @@
       <workItem from="1608193391969" duration="612000" />
       <workItem from="1608204381337" duration="50000" />
       <workItem from="1608388849998" duration="3801000" />
-      <workItem from="1608469257675" duration="2434000" />
+      <workItem from="1608469257675" duration="2913000" />
+      <workItem from="1608476127161" duration="140000" />
+      <workItem from="1608476717765" duration="1444000" />
     </task>
     <task id="LOCAL-00001" summary="packages changes">
       <created>1607783067728</created>
@@ -257,10 +253,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="final version" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608471199820">
+    <state x="175" y="477" width="1092" height="531" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608480623625">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608471199820" />
+    <state x="175" y="477" width="1092" height="531" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608480623625" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1607857274439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -289,10 +285,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607783224310" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1608396795925">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1608476265292">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608396795925" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608476265292" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1608471490844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
