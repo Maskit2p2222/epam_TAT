@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac7b6fdc-dff1-46c1-99eb-44d197857fec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_11_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/page/PostNavBarPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/NavigationBarTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github-automation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/github-automation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/AbstractPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/AbstractPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/ComparisonPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/ComparisonPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/page/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/ProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/page/QueryResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/QueryResultsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/page/QueryResultsPageWithMaxPriceFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/page/QueryResultsPageWithMaxPriceFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/SearchGoodsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test/SearchGoodsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +40,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/xUnit" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -111,7 +107,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FiltersTests" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="NavigationBarTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="github-automation" />
       <useClassPathOnly />
       <extension name="coverage">
@@ -122,7 +118,7 @@
       </extension>
       <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.FiltersTests" />
+      <option name="MAIN_CLASS_NAME" value="test.NavigationBarTests" />
       <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea -Dbrowser=chrome -Denvironment=dev -Dsurefile.suiteXmlFiles=src\test\resources\testng-smoke.xml" />
@@ -138,16 +134,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchGoodsTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="github-automation" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SUITE_NAME" value="" />
       <option name="PACKAGE_NAME" value="test" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
+      <option name="MAIN_CLASS_NAME" value="test.SearchGoodsTests" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea -Dbrowser=chrome -Denvironment=dev -Dsurefile.suiteXmlFiles=src\test\resources\testng-smoke.xml" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
@@ -181,18 +188,18 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.test" />
-      <item itemvalue="TestNG.FiltersTests" />
       <item itemvalue="TestNG.ComparisonTests" />
-      <item itemvalue="TestNG.test (1)" />
       <item itemvalue="TestNG.AddingToBookmarksTests" />
+      <item itemvalue="TestNG.SearchGoodsTests" />
+      <item itemvalue="TestNG.NavigationBarTests" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.test" />
+        <item itemvalue="TestNG.NavigationBarTests" />
+        <item itemvalue="TestNG.SearchGoodsTests" />
         <item itemvalue="TestNG.ComparisonTests" />
         <item itemvalue="TestNG.AddingToBookmarksTests" />
-        <item itemvalue="TestNG.test (1)" />
-        <item itemvalue="TestNG.FiltersTests" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +220,8 @@
       <workItem from="1608136877392" duration="885000" />
       <workItem from="1608193391969" duration="612000" />
       <workItem from="1608204381337" duration="50000" />
-      <workItem from="1608388849998" duration="1941000" />
+      <workItem from="1608388849998" duration="3801000" />
+      <workItem from="1608469257675" duration="2434000" />
     </task>
     <task id="LOCAL-00001" summary="packages changes">
       <created>1607783067728</created>
@@ -249,18 +257,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="final version" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608389245093">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608471199820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608389245093" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608471199820" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1607857274439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607857274439" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1607858498688">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1608469958277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607858498688" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608469958277" />
     <state x="756" y="426" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1607783034314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -281,26 +289,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607783224310" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1608204419279">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1608396795925">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608204419279" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1608390680620">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608396795925" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1608471490844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608390680620" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1608390680620">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608471490844" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1608471490844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608390680620" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1608390680620">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608471490844" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1608471490844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608390680620" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1608390680620">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608471490844" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1608471490844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608390680620" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608471490844" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1608389871787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -325,18 +333,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="622" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607863927486" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1608204385306">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1608469257639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608204385306" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608469257639" />
     <state x="342" y="140" key="new project wizard" timestamp="1608204427452">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1608204427452" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607785959323">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1608470795368">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607785959323" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608470795368" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

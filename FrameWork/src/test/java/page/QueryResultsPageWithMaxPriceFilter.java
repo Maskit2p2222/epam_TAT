@@ -9,6 +9,8 @@ public class QueryResultsPageWithMaxPriceFilter extends AbstractPage {
 
     private static final By byFirstElementName = By.id("price_1780444");
 
+
+
     protected QueryResultsPageWithMaxPriceFilter(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);

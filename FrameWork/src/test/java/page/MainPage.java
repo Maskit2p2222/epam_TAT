@@ -41,6 +41,12 @@ public class MainPage extends AbstractPage
 	@FindBy(xpath = "//div[@class='ib h']/em")
 	private WebElement currentRegionEm;
 
+//	@FindBy(xpath = "//a[@class='mainmenu-link mainmenu-link-first']")
+//	private WebElement navBarFirstLinkButton;
+
+	@FindBy(xpath = "//img[@src='/img/one-pixel-ico.gif']")
+	private WebElement subNavBarFirstLinkButton;
+
 	private static final By byRegionDropdownList = By.xpath("//div[@class='lf-text']");
 
 	private static final By byEnterWithEmailButton =
@@ -51,6 +57,8 @@ public class MainPage extends AbstractPage
 	private static final By byExceptionLoginLabel = By.xpath("//div[@class='ek-form-text']");
 
 	private static final By byRegionChangSpan = By.xpath("//div[@class='ib h']");
+
+	private static final By byNavBarFirstLinkButton = By.xpath("//li[@class='mainmenu-item']");
 
 	public MainPage(WebDriver driver)
 	{
@@ -72,6 +80,23 @@ public class MainPage extends AbstractPage
 		searchButton.click();
 		logger.info("Clicked on " + searchButton.getTagName());
 		return new QueryResultsPage(driver);
+	}
+
+	public MainPage clickOnNavBarFirstLinkButton(){
+		logger.info("Clicked on " + byNavBarFirstLinkButton.toString());
+		driverWait.until(ExpectedConditions
+				.presenceOfElementLocated(byNavBarFirstLinkButton)).click();
+		return this;
+	}
+
+	public PostNavBarPage clickOnSubNavBarFirstLinkButton(){
+		logger.info("Clicked on " + subNavBarFirstLinkButton.getTagName());
+		this.subNavBarFirstLinkButton.click();
+		return new PostNavBarPage(driver);
+	}
+
+	public String getSubNavBarFirstLinkButtonText(){
+		return this.subNavBarFirstLinkButton.getText();
 	}
 
 	public String getCountOfVisitedProductPagesSpan(){

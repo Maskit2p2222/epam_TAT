@@ -1,15 +1,17 @@
 package page;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class QueryResultsPage extends AbstractPage {
 
-    private static final By byFirstElementName = By.xpath("//a[@class='model-short-title no-u']/span");
+    @FindBy(xpath = "//span[@class='u']")
+    private List<WebElement> listOfAllNameLabels;
 
     @FindBy(id = "maxPrice_")
     private WebElement maxPriceInput;
@@ -29,15 +31,20 @@ public class QueryResultsPage extends AbstractPage {
 
     public QueryResultsPageWithMaxPriceFilter applySpecifiedFilter(String maxPrice){
         this.maxPriceInput.sendKeys(maxPrice);
-        logger.info("Send into " + maxPriceInput.getTagName() +" key - " + maxPrice);
+        logger.info("Send into " + this.maxPriceInput.getTagName() +" key - " + maxPrice);
         this.submitFiltersButton.click();
-        logger.info("Clicked on " + submitFiltersButton.getTagName());
+        logger.info("Clicked on " + this.submitFiltersButton.getTagName());
         return new QueryResultsPageWithMaxPriceFilter(driver);
 
     }
 
-    public String getFirstElementName() {
-        return driverWait.until(ExpectedConditions
-                        .presenceOfElementLocated(byFirstElementName)).getText();
+    public List<String> getAllElementsName() {
+        List<String> listOfAllNames = new ArrayList<>();
+        for (WebElement element:
+                listOfAllNameLabels) {
+            logger.info(element.getText());
+            listOfAllNames.add(element.getText());
+        }
+        return listOfAllNames;
     }
 }
