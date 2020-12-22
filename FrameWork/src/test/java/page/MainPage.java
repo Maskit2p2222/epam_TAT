@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage extends AbstractPage
 {
@@ -40,9 +39,6 @@ public class MainPage extends AbstractPage
 
 	@FindBy(xpath = "//div[@class='ib h']/em")
 	private WebElement currentRegionEm;
-
-//	@FindBy(xpath = "//a[@class='mainmenu-link mainmenu-link-first']")
-//	private WebElement navBarFirstLinkButton;
 
 	@FindBy(xpath = "//img[@src='/img/one-pixel-ico.gif']")
 	private WebElement subNavBarFirstLinkButton;
