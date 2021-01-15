@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace FrameWorkWildBerries.Pages
 {
-    class SearchResultPage : AbstactPage
+    internal class SearchResultPage : AbstactPage
     {
         private const string BASE_URL = "https://www.e-katalog.ru/";
 
@@ -20,6 +20,8 @@ namespace FrameWorkWildBerries.Pages
         private IWebElement MinPriceInput => driver.FindElement(By.ClassName("start-n"))
             .FindElement(By.ClassName("c-input-base-sm"));
 
+        private IWebElement OrderByPriceButton => driver.FindElement(By.Id("price"));
+
         public SearchResultPage(IWebDriver driver) : base(driver) { }
 
         public SearchResultPage OpenPage()
@@ -34,6 +36,14 @@ namespace FrameWorkWildBerries.Pages
             MaxPriceInput.SendKeys(Keys.Delete);
             MaxPriceInput.SendKeys(maxPrice);
             MaxPriceInput.SendKeys(Keys.Enter);
+            Utils.WaitForScripts.WaitForJqueryAjax(driver,
+                                       MaxDelaySeconds);
+            return this;
+        }
+
+        public SearchResultPage ClickOnOrderByPriceButton()
+        {
+            OrderByPriceButton.Click();
             Utils.WaitForScripts.WaitForJqueryAjax(driver,
                                        MaxDelaySeconds);
             return this;

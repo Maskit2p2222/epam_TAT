@@ -10,7 +10,6 @@ namespace FrameWorkWildBerries.Tests
     public abstract class Test
     {
         protected IWebDriver driver;
-
         [SetUp]
         public void Init()
         {

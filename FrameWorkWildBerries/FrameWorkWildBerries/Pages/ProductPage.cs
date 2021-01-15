@@ -16,6 +16,7 @@ namespace FrameWorkWildBerries.Pages
         private IWebElement AddToCartButton => driver.FindElement(By.ClassName("c-btn-main-lg-v1"));
         private IWebElement ChangeRegionSpan => driver.FindElement(By.ClassName("j-geocity-text"));
         private IWebElement CurrentRegionOnProductPage => driver.FindElement(By.ClassName("delivery-cond-locality"));
+        private IWebElement HeaderLogo => driver.FindElement(By.ClassName("header-logo"));
 
         public ProductPage(IWebDriver driver, string productPageUrl) : base(driver)
         {
@@ -32,6 +33,12 @@ namespace FrameWorkWildBerries.Pages
             return ProductNameSpan.Text;
         }
 
+        public MainPage ClickOnHeaderLogo()
+        {
+            HeaderLogo.Click();
+            return new MainPage(driver);
+        }
+        
         public string GetProductColorSpanText()
         {
             return ProductColorSpan.Text;

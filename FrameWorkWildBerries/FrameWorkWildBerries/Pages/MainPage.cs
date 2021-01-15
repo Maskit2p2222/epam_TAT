@@ -15,6 +15,11 @@ namespace FrameWorkWildBerries.Pages
 
 
 
+        private IReadOnlyCollection<IWebElement> VisitedProducts =>
+            driver.FindElement(By.ClassName("j-goods-wrapper-visited"))
+            .FindElements(By.ClassName("good-name"));
+        
+
         public MainPage(IWebDriver driver) : base(driver) { }
 
         public MainPage OpenPage()
@@ -23,11 +28,17 @@ namespace FrameWorkWildBerries.Pages
             return this;
         }
 
+        public List<string> GetNamesOfVisitedProducts()
+        {
+            return Utils.WebElementParses.ParseWebElemtsToListOfStings(VisitedProducts);
+        }
+
         public MainPage SendSearchQuery(string searchQuery)
         {
             InputSearchLine.SendKeys(searchQuery);
             return this;
         }
+
 
         public SearchResultPage ClickOnSearchButton()
         {

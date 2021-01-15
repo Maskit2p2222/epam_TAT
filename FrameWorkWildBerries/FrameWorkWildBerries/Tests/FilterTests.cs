@@ -26,6 +26,19 @@ namespace FrameWorkWildBerries.Tests
         }
 
         [Test]
+        public void OrderByPriceTest()
+        {
+            List<int> ProductPrices = new Pages.MainPage(driver)
+             .OpenPage()
+             .SendSearchQuery("Телефоны samsung")
+             .ClickOnSearchButton()
+             .ClickOnOrderByPriceButton()
+             .GetProductsPrices();
+
+            Assert.AreEqual(ProductPrices, ProductPrices.OrderBy(productPrice => productPrice));
+        }
+
+        [Test]
         public void MinPriceFilterTest()
         {
             string minPrice = "1000";

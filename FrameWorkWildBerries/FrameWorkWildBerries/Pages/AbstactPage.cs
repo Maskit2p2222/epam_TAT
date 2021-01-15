@@ -15,7 +15,6 @@ namespace FrameWorkWildBerries.Pages
         {
             this.driver = driver;
             this.MaxDelaySeconds = 10;
-            this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
 
