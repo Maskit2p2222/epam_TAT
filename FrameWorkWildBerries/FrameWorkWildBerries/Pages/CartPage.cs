@@ -8,7 +8,7 @@ namespace FrameWorkWildBerries.Pages
     class CartPage : AbstactPage
     {
 
-        private const string BASE_URL = "https://www.wildberries.ru/lk/basket";
+        private const string _baseUrl = "https://www.wildberries.ru/lk/basket";
 
         private IWebElement ProductColorSpanInCart => driver.FindElement(By.ClassName("color-item"));
         private IWebElement ProductNameSpanInCart => driver.FindElement(By.ClassName("good-name"));
@@ -30,7 +30,7 @@ namespace FrameWorkWildBerries.Pages
 
         public CartPage OpenPage()
         {
-            driver.Navigate().GoToUrl(BASE_URL);
+            driver.Navigate().GoToUrl(_baseUrl);
             return this;
         }
     }

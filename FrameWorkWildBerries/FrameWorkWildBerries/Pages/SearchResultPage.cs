@@ -6,7 +6,7 @@ namespace FrameWorkWildBerries.Pages
 {
     internal class SearchResultPage : AbstactPage
     {
-        private const string BASE_URL = "https://www.e-katalog.ru/";
+        private const string _baseUrl = "https://www.e-katalog.ru/";
 
 
         private IReadOnlyCollection<IWebElement> ProductsWebElemets => 
@@ -26,7 +26,7 @@ namespace FrameWorkWildBerries.Pages
 
         public SearchResultPage OpenPage()
         {
-            driver.Navigate().GoToUrl(BASE_URL);
+            driver.Navigate().GoToUrl(_baseUrl);
             return this;
         }
 

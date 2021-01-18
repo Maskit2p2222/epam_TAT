@@ -7,7 +7,7 @@ namespace FrameWorkWildBerries.Pages
 {
     class MainPage : AbstactPage
     {
-        private const string BASE_URL = "https://www.wildberries.ru/";
+        private const string _baseUrl = "https://www.wildberries.ru/";
 
         private IWebElement InputSearchLine => driver.FindElement(By.Id("tbSrch"));
 
@@ -24,7 +24,7 @@ namespace FrameWorkWildBerries.Pages
 
         public MainPage OpenPage()
         {
-            driver.Navigate().GoToUrl(BASE_URL);
+            driver.Navigate().GoToUrl(_baseUrl);
             return this;
         }
 
