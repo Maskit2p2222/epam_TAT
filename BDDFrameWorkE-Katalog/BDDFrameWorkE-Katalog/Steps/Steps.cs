@@ -1,8 +1,4 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using OpenQA.Selenium;
 
 namespace BDDFrameWorkE_Katalog.Steps
 {

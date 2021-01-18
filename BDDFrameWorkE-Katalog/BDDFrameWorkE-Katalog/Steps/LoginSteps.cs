@@ -1,7 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
 using TechTalk.SpecFlow;
-using System.Linq;
-using NUnit.Framework;
 using TechTalk.SpecFlow.Assist;
 
 namespace BDDFrameWorkE_Katalog.Steps
