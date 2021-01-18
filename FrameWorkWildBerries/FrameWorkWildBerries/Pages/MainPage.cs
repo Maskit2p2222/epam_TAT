@@ -1,7 +1,5 @@
 ﻿using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace FrameWorkWildBerries.Pages
 {
@@ -30,7 +28,7 @@ namespace FrameWorkWildBerries.Pages
 
         public List<string> GetNamesOfVisitedProducts()
         {
-            return Utils.WebElementParses.ParseWebElemtsToListOfStings(VisitedProducts);
+            return Utils.WebElementParser.ParseWebElemtsToListOfStings(VisitedProducts);
         }
 
         public MainPage SendSearchQuery(string searchQuery)

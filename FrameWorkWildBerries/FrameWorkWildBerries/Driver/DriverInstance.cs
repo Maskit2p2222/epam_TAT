@@ -1,8 +1,6 @@
 ﻿using OpenQA.Selenium;
-using System;
-using OpenQA.Selenium.Firefox;
-using System.Diagnostics;
 using OpenQA.Selenium.Chrome;
+using System;
 
 namespace FrameWorkWildBerries.Driver
 {

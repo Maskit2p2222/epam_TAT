@@ -1,12 +1,9 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 
 namespace FrameWorkWildBerries.Utils
 {
-    public class WaitForScripts
+    public class ScriptsWaiter
     {
 
         public static void WaitForJqueryAjax(IWebDriver driver, int MaxdelaySeconds)

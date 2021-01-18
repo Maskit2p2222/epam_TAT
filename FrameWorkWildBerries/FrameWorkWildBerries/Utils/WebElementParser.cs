@@ -1,12 +1,10 @@
 ﻿using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace FrameWorkWildBerries.Utils
 {
-    public class WebElementParses
+    public class WebElementParser
     {
 
         public static List<string> ParseWebElemtsToListOfStings(IReadOnlyCollection<IWebElement> webElements)

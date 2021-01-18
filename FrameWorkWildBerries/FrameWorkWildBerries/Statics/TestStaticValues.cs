@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FrameWorkWildBerries.Statics
+﻿namespace FrameWorkWildBerries.Statics
 {
     public class TestStaticValues
     {

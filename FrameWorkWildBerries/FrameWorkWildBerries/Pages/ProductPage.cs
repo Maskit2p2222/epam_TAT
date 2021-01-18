@@ -1,7 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FrameWorkWildBerries.Pages
 {
@@ -61,7 +58,7 @@ namespace FrameWorkWildBerries.Pages
                 By.XPath($"//li[@class='geocity-pop-item']/span[text()='{region}']")
             );
             regionWebElement.Click();
-            Utils.WaitForScripts.WaitForJqueryAjax(driver,
+            Utils.ScriptsWaiter.WaitForJqueryAjax(driver,
                            MaxDelaySeconds);
             return this;
 

@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace FrameWorkWildBerries.Pages
 {
@@ -36,16 +35,14 @@ namespace FrameWorkWildBerries.Pages
             MaxPriceInput.SendKeys(Keys.Delete);
             MaxPriceInput.SendKeys(maxPrice);
             MaxPriceInput.SendKeys(Keys.Enter);
-            Utils.WaitForScripts.WaitForJqueryAjax(driver,
-                                       MaxDelaySeconds);
+            Utils.ScriptsWaiter.WaitForJqueryAjax(driver, MaxDelaySeconds);
             return this;
         }
 
         public SearchResultPage ClickOnOrderByPriceButton()
         {
             OrderByPriceButton.Click();
-            Utils.WaitForScripts.WaitForJqueryAjax(driver,
-                                       MaxDelaySeconds);
+            Utils.ScriptsWaiter.WaitForJqueryAjax(driver,MaxDelaySeconds);
             return this;
         }
 
@@ -55,21 +52,21 @@ namespace FrameWorkWildBerries.Pages
             MinPriceInput.SendKeys(Keys.Delete);
             MinPriceInput.SendKeys(minPrice);
             MinPriceInput.SendKeys(Keys.Enter);
-            Utils.WaitForScripts.WaitForJqueryAjax(driver,
+            Utils.ScriptsWaiter.WaitForJqueryAjax(driver,
                                        MaxDelaySeconds);
             return this;
         }
 
         public List<int> GetProductsPrices()
         {
-            return Utils.WebElementParses.ParseListOfStringsToListOfInts(
-                    Utils.WebElementParses.ParseWebElemtsToListOfStings(ProductsPrices)
+            return Utils.WebElementParser.ParseListOfStringsToListOfInts(
+                    Utils.WebElementParser.ParseWebElemtsToListOfStings(ProductsPrices)
                 );
         }
 
         public List<string> GetMainLabelPageText()
         {
-            return Utils.WebElementParses.ParseWebElemtsToListOfStings(ProductsWebElemets);
+            return Utils.WebElementParser.ParseWebElemtsToListOfStings(ProductsWebElemets);
         }
 
     }
