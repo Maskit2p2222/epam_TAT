@@ -14,10 +14,10 @@ namespace FrameWorkWildBerries.Tests
         [Test]
         public void MaxPriceFilterTest()
         {
-            string maxPrice = "10000";
+            string maxPrice = Statics.TestStaticValues.MaxPrice;
             List<int> ProductPrices = new Pages.MainPage(driver)
              .OpenPage()
-             .SendSearchQuery("Телефоны samsung")
+             .SendSearchQuery(Statics.TestStaticValues.SearchQuery)
              .ClickOnSearchButton()
              .SendMaxPrice(maxPrice)
              .GetProductsPrices();
@@ -30,7 +30,7 @@ namespace FrameWorkWildBerries.Tests
         {
             List<int> ProductPrices = new Pages.MainPage(driver)
              .OpenPage()
-             .SendSearchQuery("Телефоны samsung")
+             .SendSearchQuery(Statics.TestStaticValues.SearchQuery)
              .ClickOnSearchButton()
              .ClickOnOrderByPriceButton()
              .GetProductsPrices();
@@ -41,10 +41,10 @@ namespace FrameWorkWildBerries.Tests
         [Test]
         public void MinPriceFilterTest()
         {
-            string minPrice = "1000";
+            string minPrice = Statics.TestStaticValues.MinPrice;
             List<int> ProductPrices = new Pages.MainPage(driver)
              .OpenPage()
-             .SendSearchQuery("Телефоны samsung")
+             .SendSearchQuery(Statics.TestStaticValues.SearchQuery)
              .ClickOnSearchButton()
              .SendMinPrice(minPrice)
              .GetProductsPrices();

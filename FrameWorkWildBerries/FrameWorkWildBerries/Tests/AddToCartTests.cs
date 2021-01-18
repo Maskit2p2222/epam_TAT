@@ -14,7 +14,7 @@ namespace FrameWorkWildBerries.Tests
         [Test]
         public void AddToCartTest()
         {
-            string productPageUrl = "https://www.wildberries.ru/catalog/10667313/detail.aspx?targetUrl=XS";
+            string productPageUrl = Statics.TestStaticValues.ProductPageUrl;
             Pages.ProductPage product = new Pages.ProductPage(driver, productPageUrl);
             string productNameOnProductPage = product
                 .OpenPage()

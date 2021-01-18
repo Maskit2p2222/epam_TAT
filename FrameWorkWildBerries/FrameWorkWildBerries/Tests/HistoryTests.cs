@@ -13,8 +13,8 @@ namespace FrameWorkWildBerries.Tests
         [Test]
         public void HistoryTest()
         {
-            string FirstProductPageUrl = "https://www.wildberries.ru/catalog/10667313/detail.aspx?targetUrl=XS";
-            string SecondProductPageUrl = "https://www.wildberries.ru/catalog/14098359/detail.aspx?targetUrl=BP";
+            string FirstProductPageUrl = Statics.TestStaticValues.ProductPageUrl;
+            string SecondProductPageUrl = Statics.TestStaticValues.AlternativeProductPageUrl;
             Pages.ProductPage productPage = new Pages.ProductPage(driver, FirstProductPageUrl);
 
             string NameOfFirstProduct = productPage

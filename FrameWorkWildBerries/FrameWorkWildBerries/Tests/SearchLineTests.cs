@@ -14,10 +14,10 @@ namespace FrameWorkWildBerries.Tests
         {
             List<string> productsNames = new Pages.MainPage(driver)
                 .OpenPage()
-                .SendSearchQuery("Телефоны Samsung")
+                .SendSearchQuery(Statics.TestStaticValues.SearchQuery)
                 .ClickOnSearchButton()
                 .GetMainLabelPageText();
-            Assert.That(productsNames.Any(p => p.ToLower().Contains("samsung")));
+            Assert.That(productsNames.Any(p => p.ToLower().Contains(Statics.TestStaticValues.ModelName)));
         }
 
         [Test]
@@ -25,10 +25,10 @@ namespace FrameWorkWildBerries.Tests
         {
             List<string> productsNames = new Pages.MainPage(driver)
                 .OpenPage()
-                .SendSearchQuery("ntktajys samsung")
+                .SendSearchQuery(Statics.TestStaticValues.WrongSearchQuery)
                 .ClickOnSearchButton()
                 .GetMainLabelPageText();
-            Assert.That(productsNames.Any(p => p.ToLower().Contains("samsung")));
+            Assert.That(productsNames.Any(p => p.ToLower().Contains(Statics.TestStaticValues.ModelName)));
         }
 
     }

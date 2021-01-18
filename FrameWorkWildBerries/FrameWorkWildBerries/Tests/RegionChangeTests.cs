@@ -12,17 +12,17 @@ namespace FrameWorkWildBerries.Tests
         [Test]
         public void ChangeRegionFromMoscowToSanPeterburg()
         {
-            string productPageUrl = "https://www.wildberries.ru/catalog/10667313/detail.aspx?targetUrl=XS";
+            string productPageUrl = Statics.TestStaticValues.ProductPageUrl;
             Pages.ProductPage product = new Pages.ProductPage(driver, productPageUrl);
             string currentRegionOnNavBar = product
                 .OpenPage()
                 .ClickOnChangeRegionSpan()
-                .ChangeRegion("Санкт-Петербург")
+                .ChangeRegion(Statics.TestStaticValues.RegionName)
                 .GetCurrentRegionFromNavBar();
             string currentRegionOnProductPage = product
                 .GetCurrentRegionFromProductPage();
 
-            Assert.AreEqual(currentRegionOnNavBar, currentRegionOnProductPage, "Санкт-Петербург");
+            Assert.AreEqual(currentRegionOnNavBar, currentRegionOnProductPage, Statics.TestStaticValues.RegionName);
         }
 
     }
