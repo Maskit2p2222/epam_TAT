@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using TechTalk.SpecFlow;
 
 namespace BDDFrameWorkE_Katalog.Steps
 {
@@ -15,6 +16,7 @@ namespace BDDFrameWorkE_Katalog.Steps
         {
             Driver.DriverInstance.CloseBrowser();
         }
+
 
     }
 }

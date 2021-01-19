@@ -58,5 +58,12 @@ namespace BDDFrameWorkE_Katalog.Steps
         {
             Assert.That(mainPage.IsProfileButtonDisplayed(), Is.True);
         }
+
+        [Then(@"I should see error message")]
+        public void ThenIShouldSeeErrorMessage()
+        {
+            Assert.That(mainPage.IsErrorMessageDisplayed(), Is.True);
+        }
+
     }
 }

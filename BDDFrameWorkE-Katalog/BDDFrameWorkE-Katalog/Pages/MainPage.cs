@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System;
 
 namespace BDDFrameWorkE_Katalog.Pages
 {
@@ -20,6 +21,7 @@ namespace BDDFrameWorkE_Katalog.Pages
         private IWebElement EnterButton => driver
            .FindElements(By
            .ClassName("ek-form-btn"))[1];
+        private IWebElement ErrorMessage => driver.FindElement(By.ClassName("ek-form-text"));
 
         public bool IsProfileButtonDisplayed() => ProfileButton.Displayed;
 
@@ -38,5 +40,7 @@ namespace BDDFrameWorkE_Katalog.Pages
         {
             driver.Navigate().GoToUrl(_baseUrl);
         }
+
+        internal bool IsErrorMessageDisplayed() => ErrorMessage.Displayed;
     }
 }
