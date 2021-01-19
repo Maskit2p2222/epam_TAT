@@ -52,7 +52,14 @@ namespace BDDFrameWorkE_Katalog.Steps
         {
             mainPage.ClickOnEnterButton();
         }
-        
+
+        [Then(@"I should see ""(.*)"" near logout button")]
+        public void ThenIShouldSeeNearLogoutButton(string userName)
+        {
+            Assert.AreEqual(mainPage.GetUserName(), userName);
+        }
+
+
         [Then(@"I should see userName near logout button")]
         public void ThenIShouldSeeUserNameNearLogoutButton()
         {
